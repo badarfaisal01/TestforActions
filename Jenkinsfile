@@ -5,19 +5,21 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                git 'https://github.com/badarfaisal01/TestforActions.git'
+                    url: 'https://github.com/badarfaisal01/TestforActions.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                echo 'Installing dependencies...'
+                // Add actual commands here
             }
         }
 
         stage('Run App') {
             steps {
-                sh 'node app.js'
+                echo 'Running the app...'
+                // Add run commands here
             }
         }
     }
